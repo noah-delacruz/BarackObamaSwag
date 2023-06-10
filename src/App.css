@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+.base-image {
+    position: absolute;
+    z-index: 0;
+  }
+
+.overlay-image {
+    position: absolute;
+    max-width: 249px;
+    top: 429px; /* Adjust the top position as needed */
+    left: 90px; /* Adjust the left position as needed */
+    z-index: 1;
+    transform: rotate(-3deg);
+    /* opacity: 0; */
+}
+
+.baseHands-image {
+    position: absolute;
+    /* filter: grayscale(1); */
+    z-index: 2;
+}
+
+button {
+    position: relative;
+    z-index: 3;
+}
