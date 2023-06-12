@@ -8,7 +8,7 @@ const CLIENT_SECRET = "561bfcb545514d6c96965f9cb2a6cb8c"
 
 export default function MainContent() {
     // States
-    const [show, setShow] = React.useState(false)
+    // const [show, setShow] = React.useState(false)
     const [album, setAlbum] = React.useState({
         albumName: "",
         albumImage: "",
@@ -29,9 +29,29 @@ export default function MainContent() {
             .then(data => setAccessToken(data.access_token))
     }, [])
 
+    async function search() {
+        console.log("Searching for " + album.albumName)
+
+        // GET request using search to get the Artist ID
+        let artistParameters = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + accessToken
+            }
+        }
+        let artistID = await fetch('https://api.spotify.com/v1/search?q=' + album.albumName + '&type=album', artistParameters)
+            .then(response => response.json())
+            .then(data => setAlbum(prevAlbum => ({
+                ...prevAlbum,
+                albumImage: data.albums.items[0].images[0].url
+            })))
+    }
+
     function handleClick() {
         console.log("clicked button!")
-        setShow(prevShow => !prevShow)
+        // setShow(prevShow => !prevShow)
+        search()
     }
 
     function handleChange(event) {
@@ -49,11 +69,17 @@ export default function MainContent() {
                 name="albumName"
                 value={album.albumName}
                 onChange={handleChange}
+                onKeyUp={event => {
+                    if(event.key === "Enter") {
+                        search()
+                    }
+                }}
             />
             <button onClick={handleClick}>click me</button>
             <div>
                 <img className="base-image" src={barackObamaImage} />
-                {show && <img className="overlay-image" src={uziImage} />}
+                {/* {show && <img className="overlay-image" src={uziImage} />} */}
+                <img className="overlay-image" src={album.albumImage} />
                 <img className="baseHands-image" src={barackObamaHandsImage} />
             </div>
         </div>
