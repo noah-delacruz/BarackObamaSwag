@@ -96,7 +96,7 @@ export default function MainContent() {
                 }}
             />
             <button onClick={search}>Search</button>
-            {album.albumImage.length > 0 && <button onClick={handleDownload}>Download Image</button>}
+            {album.albumImage.length > 0 && <button onClick={handleDownload}>Download</button>}
             <ImageRenderer imageUrls={imageUrls} onImagesCombined={handleImagesCombined} />
             <div>
                 <img className="base-image" src={barackObamaImage} />

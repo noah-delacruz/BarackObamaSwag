@@ -1,73 +1,146 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+/* Styles for large screens (desktops and laptops */
+@media screen and (min-width: 1024px) {
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    img {
+        -webkit-user-drag: none;
+    }
+    
+    .base-image {
+        position: absolute;
+        z-index: 0;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    
+    .overlay-image {
+        position: absolute;
+        max-width: 260px;
+        z-index: 1;
+        transform: rotate(-3deg);
+        left: -5%; 
+        right: -1%; 
+        /* top: 540px; */
+        top: 315%;
+        margin-left: auto; 
+        margin-right: auto;
+        /* opacity: 0; */
+    }
+    
+    .baseHands-image {
+        position: absolute;
+        /* filter: grayscale(1); */
+        z-index: 2;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    
+    button {
+        position: relative;
+        z-index: 3;
+        border: 1px solid #D5D4D8;
+        height: 35px;
+    }
+    
+    h1 {
+        font-weight: 900;
+        font-size: 45px;
+        color: #1A202C;
+    }
+    
+    input[type="text"] {
+        border-radius: 5px;
+        border: 1px solid #D5D4D8;
+        width: 500px;
+        height: 35px;
+        color: #1A202C;
+        text-indent: 5px;
+        margin-bottom: 20px;
+    }
 }
 
+/* Styles for small screens (mobile devices) */
+@media screen and (max-width: 767px) {
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-.container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    h1 {
+        font-size: 2rem;
+    }
 
-img {
-    -webkit-user-drag: none;
-}
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.base-image {
-    position: absolute;
-    z-index: 0;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto;
-  }
+    img {
+        -webkit-user-drag: none;
+    }
 
-.overlay-image {
-    position: absolute;
-    max-width: 249px;
-    z-index: 1;
-    transform: rotate(-3deg);
-    left: -5%; 
-    right: 0; 
-    top: 540px;
-    margin-left: auto; 
-    margin-right: auto;
-    /* opacity: 0; */
-}
+    .base-image {
+        position: absolute;
+        max-width: 80%;
+        z-index: 0;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
 
-.baseHands-image {
-    position: absolute;
-    /* filter: grayscale(1); */
-    z-index: 2;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto;
-}
+    .overlay-image {
+        position: absolute;
+        max-width: 45%;
+        z-index: 1;
+        transform: rotate(-3deg);
+        left: -13%; 
+        right: -1%; 
+        /* top: 42%; */
+        top: 270%;
+        margin-left: auto; 
+        margin-right: auto;
+        /* opacity: 0; */
+    }
+    
+    .baseHands-image {
+        position: absolute;
+        /* filter: grayscale(1); */
+        z-index: 2;
+        max-width: 80%;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
 
-button {
-    position: relative;
-    z-index: 3;
-}
-
-h1 {
-    font-weight: 900;
-    font-size: 45px;
-    color: #1A202C;
-}
-
-input[type="text"] {
-    border-radius: 5px;
-    border: 1px solid #D5D4D8;
-    width: 500px;
-    height: 35px;
-    color: #1A202C;
-    text-indent: 5px;
-    margin-bottom: 20px;
-}
-
-button {
-    border: 1px solid #D5D4D8;
-    height: 35px;
+    button {
+        position: relative;
+        z-index: 3;
+        border: 1px solid #D5D4D8;
+        height: 30px;
+    }
+    input[type="text"] {
+        border-radius: 5px;
+        border: 1px solid #D5D4D8;
+        width: 200px;
+        height: 30px;
+        color: #1A202C;
+        text-indent: 5px;
+        margin-bottom: 20px;
+    }
 }
