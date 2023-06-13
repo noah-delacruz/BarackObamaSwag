@@ -1,6 +1,9 @@
 import React from 'react'
+import ImageRenderer from './ImageRenderer'
 import barackObamaImage from './images/barackobama.png'
 import barackObamaHandsImage from './images/barackobamahands.png'
+import html2canvas from 'html2canvas'
+import { saveAs } from 'file-saver'
 
 const CLIENT_ID= '17cb48114a804f2e8f713ff46dc33453'
 const CLIENT_SECRET= 'c221ea94aa0f447cac5e51dfccfb2b99'
@@ -13,6 +16,7 @@ export default function MainContent() {
         albumImage: "",
     })
     const [accessToken, setAccessToken] = React.useState("")
+
 
     // Get API access token
     React.useEffect(() => {
@@ -60,6 +64,23 @@ export default function MainContent() {
         }))
     }
 
+    const imageUrls = [
+        barackObamaImage,
+        album.albumImage,
+        barackObamaHandsImage
+      ];
+      const [combinedImageUrl, setCombinedImageUrl] = React.useState("");
+    
+      const handleImagesCombined = (imageUrl) => {
+        setCombinedImageUrl(imageUrl);
+      };
+    
+      const handleDownload = () => {
+        if (combinedImageUrl) {
+          saveAs(combinedImageUrl, 'barackHoldingAlbum.png');
+        }
+      };
+
     return (
         <div>
             <input 
@@ -75,6 +96,8 @@ export default function MainContent() {
                 }}
             />
             <button onClick={search}>Search</button>
+            {album.albumImage.length > 0 && <button onClick={handleDownload}>Download Image</button>}
+            <ImageRenderer imageUrls={imageUrls} onImagesCombined={handleImagesCombined} />
             <div>
                 <img className="base-image" src={barackObamaImage} />
                 {/* {show && <img className="overlay-image" src={uziImage} />} */}
