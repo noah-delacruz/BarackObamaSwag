@@ -1,5 +1,13 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 .container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 img {
@@ -9,15 +17,22 @@ img {
 .base-image {
     position: absolute;
     z-index: 0;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
   }
 
 .overlay-image {
     position: absolute;
     max-width: 249px;
-    top: 429px; /* Adjust the top position as needed */
-    left: 90px; /* Adjust the left position as needed */
     z-index: 1;
     transform: rotate(-3deg);
+    left: -5%; 
+    right: 0; 
+    top: 540px;
+    margin-left: auto; 
+    margin-right: auto;
     /* opacity: 0; */
 }
 
@@ -25,9 +40,34 @@ img {
     position: absolute;
     /* filter: grayscale(1); */
     z-index: 2;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
 }
 
 button {
     position: relative;
     z-index: 3;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 45px;
+    color: #1A202C;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    width: 500px;
+    height: 35px;
+    color: #1A202C;
+    text-indent: 5px;
+    margin-bottom: 20px;
+}
+
+button {
+    border: 1px solid #D5D4D8;
+    height: 35px;
 }

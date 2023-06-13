@@ -1,10 +1,9 @@
 import React from 'react'
 import barackObamaImage from './images/barackobama.png'
 import barackObamaHandsImage from './images/barackobamahands.png'
-import uziImage from './images/uzi.png'
 
-const CLIENT_ID = "17cb48114a804f2e8f713ff46dc33453"
-const CLIENT_SECRET = "561bfcb545514d6c96965f9cb2a6cb8c"
+const CLIENT_ID= '17cb48114a804f2e8f713ff46dc33453'
+const CLIENT_SECRET= 'c221ea94aa0f447cac5e51dfccfb2b99'
 
 export default function MainContent() {
     // States
@@ -32,15 +31,15 @@ export default function MainContent() {
     async function search() {
         console.log("Searching for " + album.albumName)
 
-        // GET request using search to get the Artist ID
-        let artistParameters = {
+        // GET request using search to get the album
+        let albumParameters = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + accessToken
             }
         }
-        let artistID = await fetch('https://api.spotify.com/v1/search?q=' + album.albumName + '&type=album', artistParameters)
+        let albumID = await fetch('https://api.spotify.com/v1/search?q=' + album.albumName + '&type=album', albumParameters)
             .then(response => response.json())
             .then(data => setAlbum(prevAlbum => ({
                 ...prevAlbum,
@@ -48,11 +47,11 @@ export default function MainContent() {
             })))
     }
 
-    function handleClick() {
-        console.log("clicked button!")
-        // setShow(prevShow => !prevShow)
-        search()
-    }
+    // function handleClick() {
+    //     console.log("clicked button!")
+    //     // setShow(prevShow => !prevShow)
+    //     search()
+    // }
 
     function handleChange(event) {
         setAlbum(prevAlbum => ({
@@ -75,7 +74,7 @@ export default function MainContent() {
                     }
                 }}
             />
-            <button onClick={handleClick}>click me</button>
+            <button onClick={search}>Search</button>
             <div>
                 <img className="base-image" src={barackObamaImage} />
                 {/* {show && <img className="overlay-image" src={uziImage} />} */}
