@@ -18,7 +18,7 @@ Barack Obama Swag is a website that automates a Photoshop template allowing user
 
 ## Home Page
 
-![Home Page](https://i.ibb.co/Tbncvb3/Screenshot-2023-06-13-at-6-24-55-PM.png)
+<img width="1440" alt="Screenshot 2023-06-13 at 6 24 55 PM" src="https://github.com/noah-delacruz/BarackObamaSwag/assets/43018893/1b7811f7-75f5-45f4-bb59-7835309ec5bc">
 
 ## Run Locally
 
