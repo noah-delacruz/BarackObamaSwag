@@ -1,6 +1,6 @@
 # Obama Tunes
 
-Obamatunes is a website that automates a Photoshop template allowing users to create photos of Barack Obama listening to their favorite music.
+Obama Tunes is a website that automates a Photoshop template allowing users to create photos of Barack Obama listening to their favorite music.
 
 ## Tech Stack
 
