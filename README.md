@@ -1,6 +1,6 @@
-# Barack Obama Swag
+# Obama Tunes
 
-Barack Obama Swag is a website that automates a Photoshop template allowing users to create photos of Barack Obama listening to their favorite music.
+Obamatunes is a website that automates a Photoshop template allowing users to create photos of Barack Obama listening to their favorite music.
 
 ## Tech Stack
 
